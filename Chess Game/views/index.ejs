@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game</title>
+    <!-- Include Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Chessboard container styling */
+        .chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr); /* 8 columns for the chessboard */
+            grid-template-rows: repeat(8, 1fr); /* 8 rows for the chessboard */
+            width: 400px; /* Fixed width for the chessboard */
+            height: 400px; /* Fixed height for the chessboard */
+            border: 2px solid black; /* Border around the chessboard */
+        }
+
+        /* Styling for white chess pieces */
+        .piece.white {
+            color: white;
+            filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1)); /* Add shadow for better visibility */
+        }
+
+        /* Styling for black chess pieces */
+        .piece.black {
+            color: black;
+        }
+
+        /* Styling for individual squares on the chessboard */
+        .square {
+            display: flex;
+            align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
+            font-size: 36px; /* Font size for chess pieces */
+        }
+
+        /* Light-colored squares */
+        .square.light {
+            background-color: #f0d9b5; /* Light brown color */
+        }
+
+        /* Dark-colored squares */
+        .square.dark {
+            background-color: #b58863; /* Dark brown color */
+        }
+
+        /* Cursor style for draggable chess pieces */
+        .piece {
+            cursor: grab;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main container with full-screen height and dark background -->
+    <div class="w-full h-screen bg-zinc-900 flex items-center justify-center">
+        <!-- Chessboard container -->
+        <div id="chessboard" class="chessboard"></div>
+    </div>
+
+    <!-- Include Socket.IO for real-time communication -->
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <!-- Include Chess.js library for chess logic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <!-- Custom JavaScript file for chess game logic -->
+    <script src="/js/chessgame.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Post a Job</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+
+    <h1>Post a New Job</h1>
+    <div class="navbar">
+        <a href="/jobs">⬅ Back to Jobs</a>
+    </div>
+
+    <div class="form-container">
+        <form action="/jobs" method="POST">
+            <label>Title:</label>
+            <input type="text" name="title" required>
+            
+            <label>Company:</label>
+            <input type="text" name="company" required>
+            
+            <label>Location:</label>
+            <input type="text" name="location" required>
+            
+            <label>Description:</label>
+            <textarea name="description" rows="5" required></textarea>
+            
+            <button type="submit">✅ Post Job</button>
+        </form>
+    </div>
+
+</body>
+</html>

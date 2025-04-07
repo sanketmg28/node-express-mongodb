@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create Blog</title>
+    <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>✍️ Create a New Blog</h1>
+        <form action="/blogs/create" method="POST">
+            <input type="text" name="title" placeholder="Enter blog title" required>
+            <textarea name="content" placeholder="Write your blog content..." required></textarea>
+            <button type="submit" class="btn btn-success">✅ Publish</button>
+        </form>
+        <a href="/blogs" class="btn btn-secondary">🔙 Back to Blogs</a>
+    </div>
+
+</body>
+</html>

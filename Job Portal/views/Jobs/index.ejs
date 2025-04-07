@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+
+    <h1>Job Listings</h1>
+    <div class="navbar">
+        <a href="/jobs/new">➕ Post a Job</a>
+    </div>
+
+    <div class="job-container">
+        <% if (jobs.length > 0) { %>
+            <% jobs.forEach(job => { %>
+                <div class="job-card">
+                    <img src="/images/job<%= Math.floor(Math.random() * 3) + 1 %>.jpg" alt="Job Image">
+                    <div class="job-title"><%= job.title %></div>
+                    <div class="company-name">🏢 <%= job.company %></div>
+                    <div class="location">📍 <%= job.location %></div>
+                    <a href="/jobs/<%= job._id %>" class="view-btn">View Details</a>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p class="no-jobs">No jobs available. <a href="/jobs/new">Post a new job</a></p>
+        <% } %>
+    </div>
+
+</body>
+</html>

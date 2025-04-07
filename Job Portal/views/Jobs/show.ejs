@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= job.title %> - Job Details</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+
+    <h1>Job Details</h1>
+    <div class="navbar">
+        <a href="/jobs">⬅ Back to Jobs</a>
+    </div>
+
+    <div class="job-details">
+        <img src="/images/job<%= Math.floor(Math.random() * 3) + 1 %>.jpg" alt="Job Image">
+        <h2 class="job-title"><%= job.title %></h2>
+        <p class="company-name">🏢 <strong>Company:</strong> <%= job.company %></p>
+        <p class="location">📍 <strong>Location:</strong> <%= job.location %></p>
+        <p class="description">📝 <strong>Description:</strong> <%= job.description %></p>
+
+        <div class="buttons">
+            <a href="/jobs/<%= job._id %>/edit" class="edit-btn">✏ Edit</a>
+            <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit" class="delete-btn">🗑 Delete</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

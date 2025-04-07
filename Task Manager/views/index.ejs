@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task Manager</title>
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <form action="/tasks" method="POST">
+        <input type="text" name="title" required>
+        <button type="submit">Add Task</button>
+    </form>
+    <ul>
+        <% tasks.forEach(task => { %>
+            <li>
+                <form action="/tasks/<%= task._id %>" method="POST">
+                    <input type="checkbox" name="completed" onchange="this.form.submit()" <%= task.completed ? 'checked' : '' %>>
+                    <%= task.title %>
+                </form>
+                <form action="/tasks/<%= task._id %>/delete" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

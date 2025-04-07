@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blog App</title>
+    <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚀 My Blog Posts</h1>
+        <a href="/blogs/new" class="btn btn-primary">➕ Create New Blog</a>
+        
+        <ul class="blog-list">
+            <% blogs.forEach(blog => { %>
+                <li class="blog-item">
+                    <h2 class="blog-title"><%= blog.title %></h2>
+                    <p class="blog-content"><%= blog.content.length > 150 ? blog.content.substring(0, 150) + "..." : blog.content %></p>
+                    <small class="timestamp">🕒 Posted on <%= new Date(blog.createdAt).toDateString() %></small>
+                    <a href="/blogs/<%= blog._id %>" class="btn btn-view">Read More</a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+</body>
+</html>
